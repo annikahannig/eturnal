@@ -119,7 +119,8 @@ listen_validator() ->
           fun(Opts) ->
                   DefP = fun(udp) -> 3478;
                             (tcp) -> 3478;
-                            (tls) -> 5349
+                            (tls) -> 5349;
+                            (mixed) -> 5349
                          end,
                   I = proplists:get_value(ip, Opts),
                   T = proplists:get_value(transport, Opts, udp),
