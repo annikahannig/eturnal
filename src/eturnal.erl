@@ -316,8 +316,9 @@ stop_listeners(#eturnal_state{listeners = Listeners}) ->
 
 -spec tls_opts(transport()) -> proplists:proplist().
 tls_opts(tls) ->
-    [{tls, true},
-     {certfile, get_pem_file_path()}];
+    [{certfile, get_pem_file_path()}];
+tls_opts(mixed) ->
+    [{certfile, get_pem_file_path()}];
 tls_opts(_) ->
     [].
 
